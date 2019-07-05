@@ -23,4 +23,10 @@ class FizzBuzzTest extends TestCase
     {
         $this->assertSame('1', FizzBuzz::FizzBuzz(1));
     }
+
+    /** @test */
+    public function 引数にとった数値の2を数値の文字列で返す()
+    {
+        $this->assertSame('2', FizzBuzz::FizzBuzz(2));
+    }
 }
