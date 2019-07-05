@@ -12,8 +12,9 @@ use Tests\TestCase;
 
 class FizzBuzzTest extends TestCase
 {
-    public function testhoge()
+    /** @test */
+    public function 引数にとった値を文字列で返す()
     {
-        $this->fail('なかどい');
+        $this->assertEquals('中土井', FizzBuzz());
     }
 }
