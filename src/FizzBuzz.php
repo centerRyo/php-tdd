@@ -4,8 +4,8 @@ namespace App;
 
 class FizzBuzz
 {
-    public static function FizzBuzz()
+    public static function FizzBuzz($name)
     {
-        return '中土井';
+        return $name;
     }
 }

@@ -16,6 +16,6 @@ class FizzBuzzTest extends TestCase
     /** @test */
     public function 引数にとった値を文字列で返す()
     {
-    $this->assertEquals('中土井', FizzBuzz::FizzBuzz());
+    $this->assertEquals('中土井', FizzBuzz::FizzBuzz('なかどい'));
     }
 }
