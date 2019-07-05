@@ -8,8 +8,10 @@ class FizzBuzz
     {
         if ($name === 'なかどい') {
             return 'なかどい';
-        } else {
+        } elseif ($name === 1) {
             return '1';
+        } else {
+            return '2';
         }
     }
 }
