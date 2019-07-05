@@ -17,4 +17,10 @@ class FizzBuzzTest extends TestCase
     {
     $this->assertEquals('なかどい', FizzBuzz::FizzBuzz('なかどい'));
     }
+
+    /** @test */
+    public function 引数にとった数値を数値の文字列で返す()
+    {
+        $this->assertSame('1', FizzBuzz::FizzBuzz(1));
+    }
 }
