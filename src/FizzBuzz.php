@@ -10,6 +10,8 @@ class FizzBuzz
             return 'Fizz';
         } elseif ($name === 6) {
             return 'Fizz';
+        } elseif ($name === 9) {
+            return 'Fizz';
         } else {
             return "$name";
         }

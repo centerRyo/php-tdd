@@ -39,6 +39,12 @@ class FizzBuzzTest extends TestCase
     /** @test */
     public function 引数に数値の6を渡したらFizzを返す()
     {
-        $this->assertSame('Fizz', FizzBuzz::FizzBuzz((6)));
+        $this->assertSame('Fizz', FizzBuzz::FizzBuzz(6));
+    }
+
+    /** @test */
+    public function 引数に数値の9を渡したらFizzを返す()
+    {
+        $this->assertSame('Fizz', FizzBuzz::FizzBuzz(9));
     }
 }
