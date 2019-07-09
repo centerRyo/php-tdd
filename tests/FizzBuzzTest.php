@@ -47,4 +47,11 @@ class FizzBuzzTest extends TestCase
     {
         $this->assertSame('Fizz', FizzBuzz::FizzBuzz(9));
     }
+
+    /** @test */
+    public function 引数に数値の567を渡したらFizzを返す()
+    {
+        $this->assertSame('Fizz', FizzBuzz::FizzBuzz(567));
+    }
+
 }

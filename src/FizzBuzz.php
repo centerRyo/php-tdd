@@ -6,11 +6,9 @@ class FizzBuzz
 {
     public static function FizzBuzz($name)
     {
-        if ($name === 3) {
-            return 'Fizz';
-        } elseif ($name === 6) {
-            return 'Fizz';
-        } elseif ($name === 9) {
+        if ($name === "$name") {
+            return "$name";
+        } elseif ($name % 3 === 0) {
             return 'Fizz';
         } else {
             return "$name";
