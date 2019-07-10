@@ -10,11 +10,7 @@ class FizzBuzz
             return "$number";
         }
 
-        if ($number === 15) {
-            return 'FizzBuzz';
-        }
-
-        if ($number === 600) {
+        if ($number % 15 === 0) {
             return 'FizzBuzz';
         }
 
