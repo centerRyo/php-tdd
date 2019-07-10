@@ -4,20 +4,20 @@ namespace App;
 
 class FizzBuzz
 {
-    public static function FizzBuzz($name)
+    public static function FizzBuzz($number)
     {
-        if ($name === "$name") {
-            return "$name";
+        if ($number === "$number") {
+            return "$number";
         }
 
-        if ($name % 3 === 0) {
+        if ($number % 3 === 0) {
             return 'Fizz';
         }
 
-        if ($name % 5 === 0) {
+        if ($number % 5 === 0) {
             return 'Buzz';
         }
 
-        return "$name";
+        return "$number";
     }
 }
