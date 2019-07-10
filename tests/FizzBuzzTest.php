@@ -46,11 +46,6 @@ class FizzBuzzTest extends TestCase
     }
 
     /** @test */
-    public function 引数に数値の567を渡したらFizzを返す()
-    {
-        $this->assertSame('Fizz', FizzBuzz::switchFizzBuzz(567));
-    }
-    /** @test */
     public function 引数に5を渡したらBuzzを返す()
     {
         $this->assertSame('Buzz', FizzBuzz::switchFizzBuzz(5));
@@ -69,9 +64,9 @@ class FizzBuzzTest extends TestCase
     }
 
     /** @test */
-    public function 引数に600を渡したらFizzBuzzを返す()
+    public function 引数に600を渡したらエラーが返る()
     {
-        $this->assertSame('FizzBuzz', FizzBuzz::switchFizzBuzz(600));
+        $this->assertFalse(FizzBuzz::switchFizzBuzz(600));
     }
 
 }
