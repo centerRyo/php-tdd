@@ -4,7 +4,7 @@ namespace App;
 
 class FizzBuzz
 {
-    public static function FizzBuzz($number)
+    public static function switchFizzBuzz($number)
     {
         if ($number === "$number") {
             return "$number";
