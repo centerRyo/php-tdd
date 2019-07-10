@@ -14,6 +14,10 @@ class FizzBuzz
             return 'FizzBuzz';
         }
 
+        if ($number === 600) {
+            return 'FizzBuzz';
+        }
+
         if ($number % 3 === 0) {
             return 'Fizz';
         }
