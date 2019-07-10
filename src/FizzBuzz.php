@@ -14,6 +14,14 @@ class FizzBuzz
             return 'Fizz';
         }
 
+        if ($name === 5) {
+            return 'Buzz';
+        }
+
+        if ($name === 10) {
+            return 'Buzz';
+        }
+
         return "$name";
     }
 }

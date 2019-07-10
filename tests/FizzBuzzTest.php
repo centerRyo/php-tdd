@@ -53,5 +53,16 @@ class FizzBuzzTest extends TestCase
     {
         $this->assertSame('Fizz', FizzBuzz::FizzBuzz(567));
     }
+    /** @test */
+    public function 引数に5を渡したらBuzzを返す()
+    {
+        $this->assertSame('Buzz', FizzBuzz::FizzBuzz(5));
+    }
+
+    /** @test */
+    public function 引数に10を渡したらBuzzを返す()
+    {
+        $this->assertSame('Buzz', FizzBuzz::FizzBuzz(10));
+    }
 
 }
