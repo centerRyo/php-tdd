@@ -16,7 +16,7 @@ class FizzBuzzTest extends TestCase
     }
 
     /** @test */
-    public function 引数にとった数値を数値の文字列で返す()
+    public function 引数にとった数値の1を数値の文字列で返す()
     {
         $this->assertSame('1', FizzBuzz::switchFizzBuzz(1));
     }
