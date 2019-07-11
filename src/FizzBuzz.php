@@ -14,11 +14,7 @@ class FizzBuzz
             return false;
         }
 
-        if ($number === 0) {
-            return false;
-        }
-
-        if ($number === -3) {
+        if ($number < 1) {
             return false;
         }
 
