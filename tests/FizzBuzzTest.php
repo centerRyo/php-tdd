@@ -80,4 +80,16 @@ class FizzBuzzTest extends TestCase
     {
         $this->assertSame('Buzz', FizzBuzz::switchFizzBuzz(100));
     }
+
+    /** @test */
+    public function 引数に0を渡したらエラーが返る()
+    {
+        $this->assertFalse(FizzBuzz::switchFizzBuzz(0));
+    }
+
+    /** @test */
+    public function 引数にマイナス3を渡したらエラーが返る()
+    {
+        $this->assertFalse(FizzBuzz::switchFizzBuzz(-3));
+    }
 }

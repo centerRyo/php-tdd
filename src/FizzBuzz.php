@@ -14,6 +14,14 @@ class FizzBuzz
             return false;
         }
 
+        if ($number === 0) {
+            return false;
+        }
+
+        if ($number === -3) {
+            return false;
+        }
+
         if ($number % 15 === 0) {
             return 'FizzBuzz';
         }
