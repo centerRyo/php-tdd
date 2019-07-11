@@ -26,6 +26,10 @@ class FizzBuzz
             return 'Buzz';
         }
 
+        if ($number === 101) {
+            return false;
+        }
+
         return "$number";
     }
 }
