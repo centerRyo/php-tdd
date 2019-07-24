@@ -20,7 +20,7 @@ class GreetingTest extends TestCase
     /** @test */
     public function PM5時からAM0時の場合はこんばんはと返す()
     {
-        $time = 19;
+        $time = date('H', mktime($hour = 19));
         $greeting = new Greeting($time);
         $this->assertEquals('こんばんは', $greeting->call());
     }
