@@ -13,7 +13,7 @@ class Greeting
 
     public function call()
     {
-        if ($this->time >= 5 && $this->time <= 11) {
+        if ($this->time >= 5 && $this->time < 11) {
             return 'おはようございます';
         }
         // 1.PM5時からAM0時の場合はこんばんはと返す
