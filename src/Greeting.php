@@ -8,7 +8,7 @@ class Greeting
 
     public function __construct($time = 0)
     {
-        $this->time = $time - 1;
+        $this->time = $time;
     }
 
     public function call()
@@ -25,6 +25,10 @@ class Greeting
         // }
         if ($this->time >= 17) {
             return 'こんばんは';
+        }
+
+        if ($this->time >= 11 && $this->time <= 17) {
+            return 'こんにちは';
         }
     }
 }
