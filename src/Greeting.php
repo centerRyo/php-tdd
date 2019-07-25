@@ -30,5 +30,6 @@ class Greeting
         if ($this->time >= 11 && $this->time <= 17) {
             return 'こんにちは';
         }
+        return '';
     }
 }
