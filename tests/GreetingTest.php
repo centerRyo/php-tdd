@@ -67,6 +67,13 @@ class GreetingTest extends TestCase
     }
 
     /** @test */
+    public function AM11時00分01秒の場合はこんにちはと返す()
+    {
+        $greeting = new Greeting($hour = date('H', mktime($hour = 11, $minute = 00, $second = 01)));
+        $this->assertEquals('こんにちは', $greeting->call());
+    }
+
+    /** @test */
     public function AM10時59分59秒の場合はおはようございますと返す()
     {
         $greeting = new Greeting($hour = date('H', mktime($hour = 10, $minute = 59, $second = 59)));
@@ -93,4 +100,6 @@ class GreetingTest extends TestCase
         $greeting = new Greeting($hour = date('H', mktime($hour = 11)));
         $this->assertEquals('こんにちは', $greeting->call());
     }
+
+
 }
