@@ -3,6 +3,7 @@
 namespace Tests;
 
 use App\ShopProvider;
+use App\DinnerShop;
 
 // お店を表現するプログラム
 // AM5時からAM11時まではいらっしゃいませ、おはようございますと返す＋朝用メニューで注文できる
@@ -18,10 +19,24 @@ class ShopProviderTest extends TestCase
     }
 
     /** @test */
-    public function PM5時からAM0時の場合はこんばんはと返す()
+    public function PM5時からAM0時の場合はDinnerShopを返す()
     {
         $provider = new ShopProvider($hour = date('H', mktime(19)));
-        $this->assertEquals('こんばんは', $provider->call());
+        $this->assertInstanceOf(DinnerShop::class, $provider->call());
+    }
+
+    /** @test */
+    public function PM5時の場合はDinnerShopを返す()
+    {
+        $provider = new ShopProvider($hour = date('H', mktime($hour = 17)));
+        $this->assertInstanceOf(DinnerShop::class, $provider->call());
+    }
+
+    /** @test */
+    public function PM11時59分59秒の場合はDinnerShopを返す()
+    {
+        $provider = new ShopProvider($hour = date('H', mktime($hour = 23, $minute = 59, $second = 59)));
+        $this->assertInstanceOf(DinnerShop::class, $provider->call());
     }
 
     /** @test */
@@ -36,13 +51,6 @@ class ShopProviderTest extends TestCase
     {
         $provider = new ShopProvider($hour = date('H', mktime(0)));
         $this->assertEquals('', $provider->call());
-    }
-
-    /** @test */
-    public function PM11時59分59秒の場合はこんばんはと返す()
-    {
-        $provider = new ShopProvider($hour = date('H', mktime($hour = 23, $minute = 59, $second = 59)));
-        $this->assertEquals('こんばんは', $provider->call());
     }
 
     /** @test */
@@ -85,13 +93,6 @@ class ShopProviderTest extends TestCase
     {
         $provider = new ShopProvider($hour = date('H', mktime($hour = 13)));
         $this->assertEquals('こんにちは', $provider->call());
-    }
-
-    /** @test */
-    public function PM5時の場合はこんばんはと返す()
-    {
-        $provider = new ShopProvider($hour = date('H', mktime($hour = 17)));
-        $this->assertEquals('こんばんは', $provider->call());
     }
 
     /** @test */
