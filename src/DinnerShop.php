@@ -6,5 +6,8 @@ namespace App;
 
 class DinnerShop
 {
-
+    public function greet()
+    {
+        return 'いらっしゃいませ、こんばんは';
+    }
 }
