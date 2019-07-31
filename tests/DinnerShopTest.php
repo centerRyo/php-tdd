@@ -13,4 +13,11 @@ class DinnerShopTest extends TestCase
         $dinner_shop = new DinnerShop();
         $this->assertEquals('いらっしゃいませ、こんばんは', $dinner_shop->greet());
     }
+
+    /** @test */
+    public function メニューをとったらディナーメニューである()
+    {
+        $dinner_shop = new DinnerShop();
+        $this->assertEquals('ディナーメニュー', $dinner_shop->menu());
+    }
 }

@@ -10,4 +10,9 @@ class DinnerShop
     {
         return 'いらっしゃいませ、こんばんは';
     }
+
+    public function menu()
+    {
+        return 'ディナーメニュー';
+    }
 }
