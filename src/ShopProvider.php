@@ -13,7 +13,9 @@ class ShopProvider
 
     public function call()
     {
-        if ($this->time >= 5 && $this->time < 11) {
+        // if ($this->time >= 5 && $this->time < 11) {
+
+        if ($this->isMorning()) {
             return 'おはようございます';
         }
 
@@ -25,5 +27,10 @@ class ShopProvider
             return 'こんにちは';
         }
         return '';
+    }
+
+    private function isMorning()
+    {
+        return ($this->time >= 5 && $this->time < 11);
     }
 }
