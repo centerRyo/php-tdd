@@ -15,4 +15,9 @@ class DinnerShop
     {
         return 'ディナーメニュー';
     }
+
+    public function order()
+    {
+        return true;
+    }
 }
