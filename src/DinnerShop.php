@@ -16,8 +16,11 @@ class DinnerShop
         return 'ディナーメニュー';
     }
 
-    public function order()
+    public function order($menu)
     {
+        if ($menu == 'ランチメニュー') {
+            return false;
+        }
         return true;
     }
 }

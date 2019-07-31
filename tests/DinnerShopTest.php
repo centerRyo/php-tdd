@@ -27,4 +27,11 @@ class DinnerShopTest extends TestCase
         $dinner_shop = new DinnerShop();
         $this->assertTrue($dinner_shop->order('ディナーメニュー'));
     }
+
+    /** @test */
+    public function ランチメニューでは注文できない()
+    {
+        $dinner_shop = new DinnerShop();
+        $this->assertFalse($dinner_shop->order('ランチメニュー'));
+    }
 }
