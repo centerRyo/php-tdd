@@ -18,9 +18,9 @@ class DinnerShop
 
     public function order($menu)
     {
-        if ($menu == 'ランチメニュー') {
-            return false;
+        if ($menu == 'ディナーメニュー') {
+            return true;
         }
-        return true;
+        return false;
     }
 }
