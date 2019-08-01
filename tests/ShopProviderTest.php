@@ -5,6 +5,7 @@ namespace Tests;
 use App\ShopProvider;
 use App\DinnerShop;
 use App\MorningShop;
+use App\LunchShop;
 
 // お店を表現するプログラム
 // AM5時からAM11時まではいらっしゃいませ、おはようございますと返す＋朝用メニューで注文できる
@@ -60,11 +61,33 @@ class ShopProviderTest extends TestCase
         $provider = new ShopProvider($hour = date('H', mktime($hour = 10, $minute = 59, $second = 59)));
         $this->assertInstanceOf(MorningShop::class, $provider->call());
     }
+
     /** @test */
-    public function PM4時59分59秒の場合はこんにちはと返す()
+    public function AM11時からPM5時の場合はLunchShopオブジェクトを返す()
+    {
+        $provider = new ShopProvider($hour = date('H', mktime($hour = 13)));
+        $this->assertInstanceOf(LunchShop::class, $provider->call());
+    }
+
+    /** @test */
+    public function AM11時の場合はLunchShopオブジェクトを返す()
+    {
+        $provider = new ShopProvider($hour = date('H', mktime($hour = 11)));
+        $this->assertInstanceOf(LunchShop::class, $provider->call());
+    }
+
+    /** @test */
+    public function PM4時59分59秒の場合はLunchShopオブジェクトを返す()
     {
         $provider = new ShopProvider($hour = date('H', mktime($hour = 16, $minute = 59, $second = 59)));
-        $this->assertEquals('こんにちは', $provider->call());
+        $this->assertInstanceOf(LunchShop::class, $provider->call());
+    }
+
+    /** @test */
+    public function AM11時00分01秒の場合はLunchShopオブジェクトを返す()
+    {
+        $provider = new ShopProvider($hour = date('H', mktime($hour = 11, $minute = 00, $second = 01)));
+        $this->assertInstanceOf(LunchShop::class, $provider->call());
     }
 
     /** @test */
@@ -80,27 +103,4 @@ class ShopProviderTest extends TestCase
         $provider = new ShopProvider($hour = date('H', mktime($hour = 4, $minute = 59, $second = 59)));
         $this->assertEquals('', $provider->call());
     }
-
-    /** @test */
-    public function AM11時00分01秒の場合はこんにちはと返す()
-    {
-        $provider = new ShopProvider($hour = date('H', mktime($hour = 11, $minute = 00, $second = 01)));
-        $this->assertEquals('こんにちは', $provider->call());
-    }
-
-    /** @test */
-    public function AM11時からPM5時の場合はこんにちはと返す()
-    {
-        $provider = new ShopProvider($hour = date('H', mktime($hour = 13)));
-        $this->assertEquals('こんにちは', $provider->call());
-    }
-
-    /** @test */
-    public function AM11時の場合はこんにちはと返す()
-    {
-        $provider = new ShopProvider($hour = date('H', mktime($hour = 11)));
-        $this->assertEquals('こんにちは', $provider->call());
-    }
-
-
 }
