@@ -10,4 +10,17 @@ class MorningShop
     {
         return 'いらっしゃいませ、おはようございます';
     }
+
+    public function menu()
+    {
+        return 'モーニングメニュー';
+    }
+
+    public function order($menu)
+    {
+        if ($menu == 'モーニングメニュー') {
+            return true;
+        }
+        return false;
+    }
 }

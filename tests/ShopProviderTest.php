@@ -48,17 +48,17 @@ class ShopProviderTest extends TestCase
     }
 
     /** @test */
-    public function AM5時の場合はおはようございますと返す()
+    public function AM5時の場合はMorningShopオブジェクトを返す()
     {
         $provider = new ShopProvider($hour = date('H', mktime(5)));
-        $this->assertEquals('いらっしゃいませ、おはようございます', $provider->call());
+        $this->assertInstanceOf(MorningShop::class, $provider->call());
     }
 
     /** @test */
-    public function AM10時59分59秒の場合はおはようございますと返す()
+    public function AM10時59分59秒の場合はMorningShopオブジェクトを返す()
     {
         $provider = new ShopProvider($hour = date('H', mktime($hour = 10, $minute = 59, $second = 59)));
-        $this->assertEquals('いらっしゃいませ、おはようございます', $provider->call());
+        $this->assertInstanceOf(MorningShop::class, $provider->call());
     }
     /** @test */
     public function PM4時59分59秒の場合はこんにちはと返す()
