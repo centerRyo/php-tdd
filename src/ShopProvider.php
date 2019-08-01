@@ -16,7 +16,7 @@ class ShopProvider
         // if ($this->time >= 5 && $this->time < 11) {
 
         if ($this->isMorning()) {
-            return 'おはようございます';
+            return new MorningShop();
         }
 
         if ($this->time >= 17) {
