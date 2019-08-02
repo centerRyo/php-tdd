@@ -25,7 +25,7 @@ class ShopProvider
             return new DinnerShop();
         }
 
-        return '';
+        return new ClosedShop();
     }
 
     private function isMorning()

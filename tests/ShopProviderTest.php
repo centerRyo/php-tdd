@@ -6,6 +6,7 @@ use App\ShopProvider;
 use App\DinnerShop;
 use App\MorningShop;
 use App\LunchShop;
+use App\ClosedShop;
 
 // お店を表現するプログラム
 // AM5時からAM11時まではいらっしゃいませ、おはようございますと返す＋朝用メニューで注文できる
@@ -91,16 +92,16 @@ class ShopProviderTest extends TestCase
     }
 
     /** @test */
-    public function AM0時の場合は何も返さない()
+    public function AM0時の場合は閉店オブジェクトを返す()
     {
         $provider = new ShopProvider($hour = date('H', mktime(0)));
-        $this->assertEquals('', $provider->call());
+        $this->assertInstanceOf(ClosedShop::class, $provider->call());
     }
 
     /** @test */
     public function AM4時59分59秒の場合は何も返さない()
     {
         $provider = new ShopProvider($hour = date('H', mktime($hour = 4, $minute = 59, $second = 59)));
-        $this->assertEquals('', $provider->call());
+        $this->assertInstanceOf(ClosedShop::class, $provider->call());
     }
 }
