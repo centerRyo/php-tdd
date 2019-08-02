@@ -13,24 +13,33 @@ class ShopProvider
 
     public function call()
     {
-        // if ($this->time >= 5 && $this->time < 11) {
-
         if ($this->isMorning()) {
             return new MorningShop();
         }
 
-        if ($this->time >= 17) {
+        if ($this->isLunch()) {
+            return new LunchShop();
+        }
+
+        if ($this->isDinner()) {
             return new DinnerShop();
         }
 
-        if ($this->time >= 11 && $this->time <= 17) {
-            return new LunchShop();
-        }
         return '';
     }
 
     private function isMorning()
     {
         return ($this->time >= 5 && $this->time < 11);
+    }
+
+    private function isLunch()
+    {
+        return ($this->time >= 11 && $this->time < 17);
+    }
+
+    private function isDinner()
+    {
+        return ($this->time >= 17);
     }
 }
