@@ -6,10 +6,18 @@ class ShopProvider
 {
     private $time;
 
-    public function __construct($time = 0)
+    public function __construct($time = null)
     {
+        if (is_null($time)) {
+            $time = date('H');
+        }
         $this->time = $time;
     }
+    // 毎回値を渡さなければならないため採用しなかった
+    // public function __construct($time)
+    // {
+    //     $this->time = $time;
+    // }
 
     public function call()
     {
