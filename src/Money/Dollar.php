@@ -4,10 +4,10 @@ namespace App\Money;
 
 class Dollar
 {
-    public $amount;
+    public $amount = 10;
 
     public function times()
     {
-
+        
     }
 }
