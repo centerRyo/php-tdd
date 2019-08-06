@@ -15,4 +15,3 @@ class MoneyTest extends TestCase
         $this->assertEquals(10, $five->amount);
     }
 }
-
