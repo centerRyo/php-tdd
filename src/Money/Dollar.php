@@ -13,6 +13,6 @@ class Dollar
 
     public function times(int $mutiplier)
     {
-        $this->amount *= $mutiplier;
+        return new self($this->amount * $mutiplier); // return new Dollar($this->amount * $mutiplier);
     }
 }
