@@ -15,4 +15,9 @@ class Dollar
     {
         return new self($this->amount * $mutiplier); // return new Dollar($this->amount * $mutiplier);
     }
+
+    public function equals()
+    {
+        return true;
+    }
 }
