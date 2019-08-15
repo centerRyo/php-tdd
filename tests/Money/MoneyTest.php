@@ -11,17 +11,14 @@ class MoneyTest extends TestCase
     public function ドルを掛け算できる()
     {
         $five = new Dollar(5);
-        $product = $five->times(2);
-        $this->assertEquals(10, $product->amount);
+        $this->assertEquals(new Dollar(10), $five->times(2));
     }
 
     /** @test */
     public function ドルを掛け算した後に掛け算したら計算結果が正しく返ってくる()
     {
         $five = new Dollar(5);
-        $product = $five->times(2);
-        $product = $five->times(3);
-        $this->assertEquals(15, $product->amount);
+        $this->assertEquals(new Dollar(15), $five->times(3));
     }
     /** @test */
     public function 金額が同じドルは同じである()
