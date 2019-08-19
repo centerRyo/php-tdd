@@ -6,7 +6,7 @@ class Franc
 {
     private $amount;
 
-    public function ___construct(int $amount)
+    public function __construct(int $amount)
     {
         $this->amount = $amount;
     }
@@ -14,5 +14,10 @@ class Franc
     public function times(int $multiplier)
     {
         return new self($this->amount * $multiplier);
+    }
+
+    public function equals($franc)
+    {
+        return $this->amount == $franc->amount;
     }
 }

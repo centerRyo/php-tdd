@@ -46,4 +46,16 @@ class MoneyTest extends TestCase
         $five = new Franc(5);
         $this->assertEquals(new Franc(15), $five->times(3));
     }
+
+    /** @test */
+    public function 金額が同じフランは同じである()
+    {
+        $this->assertTrue((new Franc(5))->equals(new Franc(5)));
+    }
+
+    /** @test */
+    public function 金額が異なるフランは異なるものである()
+    {
+        $this->assertFalse((new Franc(5))->equals(new Franc(6)));
+    }
 }
