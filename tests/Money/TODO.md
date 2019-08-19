@@ -1,7 +1,8 @@
 - $5 + 10chf = $10(レートが２対１の場合)
-- amountをprivateにする
+- ~~amountをprivateにする~~
 - Moneyの丸め処理をどうするか？
 - ~~equals() // オブジェクト同士の比較をしたい~~
 - hashCode() // 連想配列のキーとして使いたい
 - nullとの等価性
 - オブジェクトの等価性
+- 5chf * 2 = 10chf
