@@ -4,6 +4,7 @@ namespace Tests\Money;
 
 use Tests\TestCase;
 use App\Money\Dollar;
+use App\Money\Franc;
 
 class MoneyTest extends TestCase
 {
@@ -30,5 +31,12 @@ class MoneyTest extends TestCase
     public function 金額が異なるドルは違うものである()
     {
         $this->assertFalse((new Dollar(5))->equals(new Dollar(6)));
+    }
+
+    /** @test */
+    public function フランを掛け算できる()
+    {
+        $five = new Franc(5);
+        $this->assertEquals(new Franc(10), $five->times(2));
     }
 }
