@@ -11,8 +11,8 @@ class Franc
         $this->amount = $amount;
     }
 
-    public function times()
+    public function times(int $multiplier)
     {
-        return new self($this->amount * 2);
+        return new self($this->amount * $multiplier);
     }
 }

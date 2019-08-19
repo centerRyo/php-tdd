@@ -39,4 +39,11 @@ class MoneyTest extends TestCase
         $five = new Franc(5);
         $this->assertEquals(new Franc(10), $five->times(2));
     }
+
+    /** @test */
+    public function フランを掛け算した後に掛け算したら計算結果が正しく返ってくる()
+    {
+        $five = new Franc(5);
+        $this->assertEquals(new Franc(15), $five->times(3));
+    }
 }
