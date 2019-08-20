@@ -4,8 +4,6 @@ namespace App\Money;
 
 class Dollar
 {
-    private $amount;
-
     public function __construct(int $amount)
     {
         $this->amount = $amount;
