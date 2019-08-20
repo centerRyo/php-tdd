@@ -5,3 +5,7 @@
 - hashCode() // 連想配列のキーとして使いたい
 - nullとの等価性
 - オブジェクトの等価性
+- ~~5chf * 2 = 10chf~~
+- DollarとFrancの重複
+- equalsの一般化
+- timesの一般化
