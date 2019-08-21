@@ -2,7 +2,7 @@
 
 namespace App\Money;
 
-class Dollar
+class Dollar extends Money
 {
     public function __construct(int $amount)
     {
@@ -14,7 +14,7 @@ class Dollar
         return new self($this->amount * $mutiplier); // return new Dollar($this->amount * $mutiplier);
     }
 
-    public function equals($dollar)
+    public function equals(Money $dollar)
     {
         return $this->amount == $dollar->amount;
     }
