@@ -16,7 +16,7 @@ class Franc
         return new self($this->amount * $multiplier);
     }
 
-    public function equals($franc)
+    public function equals(Franc $franc)
     {
         return $this->amount == $franc->amount;
     }
