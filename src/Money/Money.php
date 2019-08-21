@@ -6,8 +6,8 @@ class Money
 {
     protected $amount;
 
-    public function equals(Money $dollar)
+    public function equals(Money $money)
     {
-        return $this->amount == $dollar->amount;
+        return $this->amount == $money->amount;
     }
 }
