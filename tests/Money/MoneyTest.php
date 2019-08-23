@@ -58,4 +58,10 @@ class MoneyTest extends TestCase
     {
         $this->assertFalse((new Franc(5))->equals(new Franc(6)));
     }
+
+    /** @test */
+    public function 金額が同じドルとフランは異なる金額として扱う()
+    {
+        $this->assertFalse((new Franc(5))->equals(new Dollar(5)));
+    }
 }
