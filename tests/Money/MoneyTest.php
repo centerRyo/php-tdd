@@ -5,13 +5,15 @@ namespace Tests\Money;
 use Tests\TestCase;
 use App\Money\Dollar;
 use App\Money\Franc;
+use App\Money\Money;
 
 class MoneyTest extends TestCase
 {
     /** @test */
     public function ドルを掛け算できる()
     {
-        $five = new Dollar(5);
+        // $five = new Dollar(5);
+        $five = Money::dollar(5);
         $this->assertEquals(new Dollar(10), $five->times(2));
     }
 
