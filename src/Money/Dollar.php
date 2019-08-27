@@ -9,7 +9,7 @@ class Dollar extends Money
         $this->amount = $amount;
     }
 
-    public function times(int $mutiplier): Dollar
+    public function times(int $mutiplier): Money
     {
         return new self($this->amount * $mutiplier); // return new Dollar($this->amount * $mutiplier);
     }
