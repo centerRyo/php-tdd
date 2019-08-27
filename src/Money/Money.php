@@ -2,7 +2,7 @@
 
 namespace App\Money;
 
-class Money
+abstract class Money
 {
     protected $amount;
 
@@ -12,7 +12,9 @@ class Money
         return $this->amount == $money->amount && $this instanceof $money; // 言語レベルでオブジェクトを比較する時にinstanceOfを使用している
     }
 
-    public static function dollar(int $amount): Dollar
+    abstract public function times(int $multiplier): Money;
+
+    public static function dollar(int $amount): Money
     {
         return new Dollar($amount);
     }
