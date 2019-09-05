@@ -65,4 +65,16 @@ class MoneyTest extends TestCase
     {
         $this->assertFalse((Money::franc(5))->equals(Money::dollar(5)));
     }
+
+    /** @test */
+    public function ドルクラスを呼ぶと文字列の通貨が返ってくる()
+    {
+        $this->assertEquals('USD', Money::dollar(1)->currency());
+    }
+
+    /** @test */
+    public function フランクラスを呼ぶと文字列の通貨が返ってくる()
+    {
+        $this->assertEquals('CHF', Money::franc(1)->currency());
+    }
 }

@@ -13,4 +13,9 @@ class Dollar extends Money
     {
         return new self($this->amount * $mutiplier); // return new Dollar($this->amount * $mutiplier);
     }
+
+    public function currency(): String
+    {
+        return 'USD';
+    }
 }
