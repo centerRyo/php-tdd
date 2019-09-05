@@ -4,9 +4,12 @@ namespace App\Money;
 
 class Dollar extends Money
 {
+    private $currency;
+
     public function __construct(int $amount)
     {
         $this->amount = $amount;
+        $this->currency = 'USD';
     }
 
     public function times(int $mutiplier): Money
@@ -16,6 +19,6 @@ class Dollar extends Money
 
     public function currency(): String
     {
-        return 'USD';
+        return $this->currency;
     }
 }
