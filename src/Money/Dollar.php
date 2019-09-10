@@ -6,15 +6,15 @@ class Dollar extends Money
 {
     private $currency;
 
-    public function __construct(int $amount)
+    public function __construct(int $amount, String $currency)
     {
         $this->amount = $amount;
-        $this->currency = 'USD';
+        $this->currency = $currency;
     }
 
     public function times(int $mutiplier): Money
     {
-        return new self($this->amount * $mutiplier); // return new Dollar($this->amount * $mutiplier);
+        return new Money($this->amount * $mutiplier); // return new Dollar($this->amount * $mutiplier);
     }
 
     public function currency(): String
