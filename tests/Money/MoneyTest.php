@@ -3,8 +3,6 @@
 namespace Tests\Money;
 
 use Tests\TestCase;
-use App\Money\Dollar;
-use App\Money\Franc;
 use App\Money\Money;
 
 class MoneyTest extends TestCase
