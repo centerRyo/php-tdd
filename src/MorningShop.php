@@ -13,14 +13,15 @@ class MorningShop
 
     public function menu()
     {
-        return 'モーニングメニュー';
+        return 'モーニングメニューです';
     }
 
     public function order($menu)
     {
         if ($menu == 'モーニングメニュー') {
-            return true;
+            echo 'メニューはこちらです';
+        } else {
+            echo $menu . 'は、ただいまの時間は扱っていません';
         }
-        return false;
     }
 }
