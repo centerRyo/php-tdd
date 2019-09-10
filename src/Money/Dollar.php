@@ -8,6 +8,7 @@ class Dollar extends Money
 
     public function __construct(int $amount, String $currency)
     {
+        parent::__construct($amount, $currency);
         $this->amount = $amount;
         $this->currency = $currency;
     }

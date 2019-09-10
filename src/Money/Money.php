@@ -7,9 +7,10 @@ abstract class Money
     protected $amount;
     protected $currency;
 
-    public function __construct()
+    public function __construct(int $amount, String $currency)
     {
-        return $this->currency;
+        $this->amount = $amount;
+        $this->currency = $currency;
     }
 
     public function equals(Money $money)
