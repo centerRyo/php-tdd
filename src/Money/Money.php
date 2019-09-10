@@ -5,6 +5,12 @@ namespace App\Money;
 abstract class Money
 {
     protected $amount;
+    protected $currency;
+
+    public function __construct()
+    {
+        return $this->currency;
+    }
 
     public function equals(Money $money)
     {
@@ -21,7 +27,7 @@ abstract class Money
 
     public static function franc(int $amount): Money
     {
-        return new Franc($amount);
+        return new Franc($amount, 'CHF');
     }
 
     abstract public function currency() : String;
