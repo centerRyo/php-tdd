@@ -4,7 +4,7 @@ namespace App\Money;
 
 class Franc extends Money
 {
-    private $currency;
+    protected $currency;
 
     public function __construct(int $amount, String $currency)
     {
@@ -15,7 +15,7 @@ class Franc extends Money
 
     public function times(int $multiplier): Money
     {
-        return new Money($this->amount * $multiplier);
+        return new Money($this->amount * $multiplier, $this->currency);
     }
 
     public function currency(): String
