@@ -2,7 +2,9 @@
 
 namespace App\Money;
 
-abstract class Money
+use phpDocumentor\Reflection\Types\String_;
+
+class Money
 {
     protected $amount;
     protected $currency;
@@ -19,7 +21,11 @@ abstract class Money
         return $this->amount == $money->amount && $this instanceof $money; // 言語レベルでオブジェクトを比較する時にinstanceOfを使用している
     }
 
-    abstract public function times(int $multiplier): Money;
+    // abstract public function times(int $multiplier): Money;
+    public function times(int $amount)
+    {
+        return null;
+    }
 
     public static function dollar(int $amount): Money
     {
@@ -31,5 +37,13 @@ abstract class Money
         return new Franc($amount, 'CHF');
     }
 
-    abstract public function currency() : String;
+    public function currency(): String
+    {
+        return $this->currency;
+    }
+
+    public function toString(): String
+    {
+        return $this->amount + '' + $this->currency;
+    }
 }
