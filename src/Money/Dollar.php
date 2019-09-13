@@ -18,8 +18,9 @@ class Dollar extends Money
         return new self($this->amount * $mutiplier, $this->currency); // return new Dollar($this->amount * $mutiplier);
     }
 
-    public function currency(): String
+    public function currency(): Currency
     {
-        return $this->currency;
+        // return $this->currency;
+        return parent::currency();
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Money;
 
-use phpDocumentor\Reflection\Types\String_;
+use App\Money\Currency;
 
 class Money
 {
@@ -18,10 +18,10 @@ class Money
     public function equals(Money $money)
     {
         // return $this->amount == $money->amount && get_class($this) == get_class($money); // クラス名を文字列として取得している
-        return $this->amount == $money->amount && $this->currency() == $money->currency() ; // 言語レベルでオブジェクトを比較する時にinstanceOfを使用している
+        // return $this->amount == $money->amount && $this->currency() == $money->currency() ; // 言語レベルでオブジェクトを比較する時にinstanceOfを使用している
+        return $this->amount == $money->amount && $this->currency()->equals($money->currency()); //valueオブジェクトを使った形
     }
 
-    // abstract public function times(int $multiplier): Money;
     public function times(int $amount)
     {
         return null;
@@ -37,13 +37,13 @@ class Money
         return new Franc($amount, 'CHF');
     }
 
-    public function currency(): String
+    public function currency(): Currency
     {
-        return $this->currency;
+        return new Currency($this->currency);
     }
 
-    public function toString(): String
+    public function toString(): string
     {
-        return $this->amount + '' + $this->currency;
+        return "{$this->amount}{$this->currency}";
     }
 }
