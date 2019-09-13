@@ -2,6 +2,7 @@
 
 namespace Tests\Money;
 
+use App\Money\Franc;
 use Tests\TestCase;
 use App\Money\Money;
 
@@ -74,5 +75,11 @@ class MoneyTest extends TestCase
     public function フランクラスを呼ぶと文字列の通貨が返ってくる()
     {
         $this->assertEquals('CHF', Money::franc(1)->currency());
+    }
+
+    /** @test */
+    public function 異なる通貨クラスで比較しても同じ値を返す()
+    {
+        $this->assertTrue((new Money(10, 'CHF'))->equals(new Franc(10, 'CHF')));
     }
 }
