@@ -24,7 +24,7 @@ class Money
 
     public function times(int $multiplier)
     {
-        return new Money($this->amount * $this->multiplier, $this->currency);
+        return new Money($this->amount * $multiplier, $this->currency);
     }
 
     public static function dollar(int $amount): Money
