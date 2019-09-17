@@ -22,9 +22,9 @@ class Money
         return $this->amount == $money->amount && $this->currency()->equals($money->currency()); //valueオブジェクトを使った形
     }
 
-    public function times(int $amount)
+    public function times(int $multiplier)
     {
-        return null;
+        return new Money($this->amount * $this->multiplier, $this->currency);
     }
 
     public static function dollar(int $amount): Money
