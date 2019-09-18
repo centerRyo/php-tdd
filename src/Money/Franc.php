@@ -13,11 +13,6 @@ class Franc extends Money
         $this->currency = $currency;
     }
 
-    public function times(int $multiplier): Money
-    {
-        return new self($this->amount * $multiplier, $this->currency);
-    }
-
     public function currency(): Currency
     {
         // return $this->currency;
