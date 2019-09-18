@@ -8,7 +8,7 @@
 - ~~5chf * 2 = 10chf~~
 - DollarとFrancの重複
 - ~~equalsの一般化~~
-- timesの一般化
+- ~~timesの一般化~~
 - ~~FrancとDollarの比較~~
-- 通貨
+- ~~通貨~~
 - フランの掛け算のテストの削除
