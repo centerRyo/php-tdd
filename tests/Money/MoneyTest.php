@@ -70,4 +70,11 @@ class MoneyTest extends TestCase
     {
         $this->assertTrue((new Money(10, 'CHF'))->equals(new Franc(10, 'CHF')));
     }
+
+    /** @test */
+    public function ドルにドルを足すと正しい値が計算されて返ってくる()
+    {
+        $sum = Money::dollar(5)->plus(Money::dollar(5));
+        $this->assertEquals(Money::dollar(10), $sum);
+    }
 }
