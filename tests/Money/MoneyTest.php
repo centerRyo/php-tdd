@@ -48,18 +48,6 @@ class MoneyTest extends TestCase
     }
 
     /** @test */
-    public function 金額が同じフランは同じである()
-    {
-        $this->assertTrue((Money::franc(5))->equals(Money::franc(5)));
-    }
-
-    /** @test */
-    public function 金額が異なるフランは異なるものである()
-    {
-        $this->assertFalse((Money::franc(5))->equals(Money::franc(6)));
-    }
-
-    /** @test */
     public function 金額が同じドルとフランは異なる金額として扱う()
     {
         $this->assertFalse((Money::franc(5))->equals(Money::dollar(5)));
