@@ -3,8 +3,9 @@
 namespace App\Money;
 
 use App\Money\Currency;
+use App\Money\Expression;
 
-class Money
+class Money implements Expression
 {
     protected $amount;
     protected $currency;
@@ -47,7 +48,7 @@ class Money
         return "{$this->amount}{$this->currency}";
     }
 
-    public function plus($addend): Money
+    public function plus($addend): Expression
     {
         return new Money($this->amount + $addend->amount, $this->currency);
     }
