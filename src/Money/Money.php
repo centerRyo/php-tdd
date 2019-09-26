@@ -4,6 +4,7 @@ namespace App\Money;
 
 use App\Money\Currency;
 use App\Money\Expression;
+use App\Money\Sum;
 
 class Money implements Expression
 {
@@ -50,6 +51,6 @@ class Money implements Expression
 
     public function plus($addend): Expression
     {
-        return new Money($this->amount + $addend->amount, $this->currency);
+        return new Sum($this, $addend);
     }
 }

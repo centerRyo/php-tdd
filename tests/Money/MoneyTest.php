@@ -80,7 +80,16 @@ class MoneyTest extends TestCase
         $bank = new Bank();
         $sum = Money::dollar(5)->plus(Money::dollar(5));
         $reduced = $bank->reduce($sum, 'USD');
-        $this->assertEquals(Money::dollar(10), $sum);
         $this->assertEquals(Money::dollar(10), $reduced);
+    }
+
+    /** @test */
+    public function ドルを加算すると合計値が得られる()
+    {
+        $five = Money::dollar(5);
+        $result = $five->plus($five);
+        $sum = $result;
+        $this->assertEquals($five, $sum->augend);
+        $this->assertEquals($five, $sum->addend);
     }
 }
