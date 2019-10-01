@@ -8,7 +8,7 @@ use App\Money\Sum;
 
 class Money implements Expression
 {
-    protected $amount;
+    public $amount;
     protected $currency;
 
     public function __construct(int $amount, String $currency)

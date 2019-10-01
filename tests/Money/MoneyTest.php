@@ -6,6 +6,7 @@ use App\Money\Franc;
 use Tests\TestCase;
 use App\Money\Money;
 use App\Money\Bank;
+use App\Money\Sum;
 
 class MoneyTest extends TestCase
 {
@@ -91,5 +92,14 @@ class MoneyTest extends TestCase
         $sum = $result;
         $this->assertEquals($five, $sum->augend);
         $this->assertEquals($five, $sum->addend);
+    }
+
+    /** @test */
+    public function Moneyは通貨の合計を金額として持つ()
+    {
+        $sum = new Sum(Money::dollar(3), Money::dollar(4));
+        $bank = new Bank();
+        $result = $bank->reduce($sum, 'USD');
+        $this->assertEquals(Money::dollar(7), $result);
     }
 }

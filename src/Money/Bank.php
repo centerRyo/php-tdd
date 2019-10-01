@@ -6,8 +6,9 @@ use App\Money\Money;
 
 class Bank
 {
-    public function reduce(): Money
+    public function reduce(Expression $source, String $to): Money
     {
-        return Money::dollar(10);
+        $sum = $source;
+        return $sum->reduce($to);
     }
 }
