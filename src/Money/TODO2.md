@@ -1,6 +1,6 @@
 - $5 + 10chf = $10(レートが２対１の場合)
 - $5 + $5 = $10
 - $5 + $5からMoneyの返却
-- Bank->reduce(Money)
+- ~~Bank->reduce(Money)~~
 - 通貨交換によるMoneyの変換
 - reduce(Bank, String)
