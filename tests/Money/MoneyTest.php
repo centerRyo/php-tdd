@@ -102,4 +102,12 @@ class MoneyTest extends TestCase
         $result = $bank->reduce($sum, 'USD');
         $this->assertEquals(Money::dollar(7), $result);
     }
+
+    /** @test */
+    public function 引数がMoneyの際にBankが通貨の合計を金額としてもつ()
+    {
+        $bank = new Bank();
+        $result = $bank->reduce(Money::dollar(1), 'USD');
+        $this->assertEquals(Money::dollar(1), $result);
+    }
 }

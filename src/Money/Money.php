@@ -53,4 +53,9 @@ class Money implements Expression
     {
         return new Sum($this, $addend);
     }
+
+    public function reduce(String $to) :Money
+    {
+        return $this;
+    }
 }
